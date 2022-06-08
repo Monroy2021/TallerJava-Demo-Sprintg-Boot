@@ -8,10 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Optional;
 
-@CrossOrigin
-@RestController
-@RequestMapping("/usuario")
-public class UsuarioController {
+public class UsuarioRolController {
+
     @Autowired
     UsuarioService usuarioService;
 
@@ -25,15 +23,15 @@ public class UsuarioController {
         return this.usuarioService.guardarUsuario(usuario);
     }
 
+    @PutMapping(path = "/{id}")
+    public UsuarioModel actualizarUsuario(@RequestBody UsuarioModel usuario, @PathVariable("id") Long id) {
+        usuario.setId(id);
+        return this.usuarioService.guardarUsuario(usuario);
+    }
+
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id) {
         return this.usuarioService.obtenerPorId(id);
-    }
-
-    @PutMapping(path = "/{id}")
-    public UsuarioModel actualizarUsuario(@RequestBody UsuarioModel usuario,@PathVariable("id") Long id) {
-        usuario.setId(id);
-        return this.usuarioService.guardarUsuario(usuario);
     }
 
     @GetMapping("/query")
@@ -50,5 +48,6 @@ public class UsuarioController {
             return "No pudo eliminar el usuario con id" + id;
         }
     }
+
 
 }

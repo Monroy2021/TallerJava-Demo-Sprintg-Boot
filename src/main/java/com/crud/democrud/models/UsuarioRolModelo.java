@@ -1,10 +1,11 @@
 package com.crud.democrud.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "usuarioRol")
 public class UsuarioRolModelo {
 
     @Id
@@ -45,7 +46,11 @@ public class UsuarioRolModelo {
         this.Rol = Rol;
     }
 
-    public UsuarioRolModelo() {
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UsuarioModel.class, optional = false)
+    @JoinColumn(name = "user_usuario_id", nullable = false)
+    @JsonManagedReference
+    private UsuarioModel usuario;
 
+    public UsuarioRolModelo() {
     }
 }
