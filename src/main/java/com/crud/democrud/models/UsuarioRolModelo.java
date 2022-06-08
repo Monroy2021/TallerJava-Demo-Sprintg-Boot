@@ -13,7 +13,7 @@ public class UsuarioRolModelo {
     @Column(unique = true, nullable = false)
 
     private Long Idrol;
-    private Long IdUsuario;
+    //private Long IdUsuario;
     private String Rol;
 
     public Long getIdrol() {
@@ -24,13 +24,13 @@ public class UsuarioRolModelo {
         Idrol = idrol;
     }
 
-    public Long getIdUsuario() {
-        return IdUsuario;
-    }
+    //public Long getIdUsuario() {
+    //    return IdUsuario;
+    // }
 
-    public void setIdUsuario(Long idUsuario) {
-        IdUsuario = idUsuario;
-    }
+    //public void setIdUsuario(Long idUsuario) {
+    // IdUsuario = idUsuario;
+    //}
 
     public String getRol() {
         return Rol;
@@ -42,7 +42,7 @@ public class UsuarioRolModelo {
 
     public UsuarioRolModelo(Long Idrol, Long IdUsuario, String rol) {
         this.Idrol = Idrol;
-        this.IdUsuario = IdUsuario;
+        //this.IdUsuario = IdUsuario;
         this.Rol = Rol;
     }
 
