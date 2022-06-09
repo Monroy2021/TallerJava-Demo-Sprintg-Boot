@@ -25,12 +25,12 @@ public class UsuarioRolModelo {
     }
 
     //public Long getIdUsuario() {
-    //    return IdUsuario;
-    // }
+        //return IdUsuario;
+    //}
 
     //public void setIdUsuario(Long idUsuario) {
-    // IdUsuario = idUsuario;
-    //}
+       // IdUsuario = idUsuario;
+   // }
 
     public String getRol() {
         return Rol;
@@ -42,7 +42,7 @@ public class UsuarioRolModelo {
 
     public UsuarioRolModelo(Long Idrol, Long IdUsuario, String rol) {
         this.Idrol = Idrol;
-        //this.IdUsuario = IdUsuario;
+       // this.IdUsuario = IdUsuario;
         this.Rol = Rol;
     }
 

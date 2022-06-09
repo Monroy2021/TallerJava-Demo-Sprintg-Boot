@@ -47,4 +47,14 @@ public class UsuarioServiceTest {
         UsuarioModel usuarioModelRegistrado = usuarioRepository.save(usuarioModel);
         assertNotNull(usuarioModelRegistrado);
     }
+
+    @Test
+    public void testEliminarUsuario() {
+        Long idEliminar = 2L;
+        Optional<UsuarioModel> eliminar = usuarioRepository.findById(idEliminar);
+        assertThat(eliminar.get().getId()).isEqualTo(idEliminar);
+
+    }
+
+
 }
