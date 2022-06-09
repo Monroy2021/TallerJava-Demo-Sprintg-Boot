@@ -57,15 +57,9 @@ public class UsuarioModel {
 
     }
 
-    @OneToMany(
-            fetch = FetchType.EAGER,
-            targetEntity = UsuarioRolModelo.class,
-            cascade = CascadeType.REMOVE,
-            mappedBy = "usuario"
-    )
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
+    private List<UsuarioRolModelo> lines;
 
-    @JsonManagedReference
-    private List<UsuarioRolModelo> rol = new ArrayList<>();
 
     public void setEmail(String email) {
         this.email = email;

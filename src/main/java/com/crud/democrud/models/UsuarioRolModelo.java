@@ -25,12 +25,12 @@ public class UsuarioRolModelo {
     }
 
     //public Long getIdUsuario() {
-        //return IdUsuario;
+    //return IdUsuario;
     //}
 
     //public void setIdUsuario(Long idUsuario) {
-       // IdUsuario = idUsuario;
-   // }
+    // IdUsuario = idUsuario;
+    // }
 
     public String getRol() {
         return Rol;
@@ -42,14 +42,15 @@ public class UsuarioRolModelo {
 
     public UsuarioRolModelo(Long Idrol, Long IdUsuario, String rol) {
         this.Idrol = Idrol;
-       // this.IdUsuario = IdUsuario;
+        // this.IdUsuario = IdUsuario;
         this.Rol = Rol;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UsuarioModel.class, optional = false)
-    @JoinColumn(name = "user_usuario_id", nullable = false)
-    @JsonManagedReference
+
+    @ManyToOne
+    @JoinColumn(name = "id_usuario", nullable = false, updatable = false)
     private UsuarioModel usuario;
+
 
     public UsuarioRolModelo() {
     }
